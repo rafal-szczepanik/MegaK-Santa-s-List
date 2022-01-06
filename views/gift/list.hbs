@@ -1,0 +1,23 @@
+<h2>Lista prezentów</h2>
+
+<ul class="list-container-side">
+  {{#each giftsList}}
+    <li class="list-item-gift">
+      <label>
+        {{this.name}} ({{this.stock}} szt.)
+      </label>
+    </li>
+  {{/each}}
+</ul>
+<h2>Dodaj prezent do listy</h2>
+<form action="/gift" method="POST">
+  <label>
+    Nazwa
+    <input name="name" type="text">
+  </label>
+  <label>
+    Ilość (szt.)
+    <input name="stock" type="number">
+  </label>
+  <button>Zapisz</button>
+</form>
