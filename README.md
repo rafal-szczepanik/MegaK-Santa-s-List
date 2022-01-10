@@ -20,9 +20,10 @@ Project uses:
 * Bootstrap
 ## Images
 localhost:3000/child
-![aplikacja1](https://user-images.githubusercontent.com/77553286/148827553-9a3ecd33-b2b4-45e2-8deb-1abd0e15e4ed.jpg)
+![aplikacja1](https://user-images.githubusercontent.com/77553286/148828378-9974545e-7d85-4479-8edf-1ee55f415aaf.jpg)
+
 localhost:3000/gift
-![aplikacja2](https://user-images.githubusercontent.com/77553286/148827560-d04b9df6-f94c-42a7-819e-356ebfe313a1.jpg)
+![aplikacja2](https://user-images.githubusercontent.com/77553286/148828405-aa958cd6-b910-4451-a20d-a321451e9c15.jpg)
 
 ## Sources
 This app is inspired by my Javascript mentor Jakub Król
