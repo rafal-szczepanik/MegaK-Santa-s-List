@@ -6,19 +6,18 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Lista Świętego Mikołaja</title>
-    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/css/style.css">
   </head>
   <body>
-    <h1>Lista Świętego Mikołaja</h1>
-    <hr>
-    <ul class="list-container">
-      <li class="list-item">
-        <a class="list-link" href="/child">Dzieci</a>
-      </li>
-      <li class="list-item">
-        <a class="list-link" href="/gift">Prezenty</a>
-      </li>
-    </ul>
-    {{{body}}}
+    <div class="container text-center">
+      <h1 class="h1 p-4">Lista Świętego Mikołaja</h1>
+      <div class="d-flex m-auto justify-content-around w-75">
+        <a class="btn btn-primary" href="/child">Dzieci</a></li>
+        <a class="btn btn-primary" href="/gift">Prezenty</a></li>
+      </div>
+      <hr>
+      {{{body}}}
+    </div>
   </body>
 </html>

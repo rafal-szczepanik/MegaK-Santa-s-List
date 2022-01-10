@@ -1,30 +1,48 @@
-<h2>Lista dzieci</h2>
+<div class="container">
+  <h2 class="h2">Lista Dzieci</h2>
+  <!-- Div using .table-responsive class-->
+  <div class="table-responsive">
+    <!--Bootstrap Table using .table class-->
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Numer</th>
+          <th>Imię</th>
+          <th>Prezent</th>
+        </tr>
+      <tbody>
+        {{#each allChildren}}
+          <form class="form-check" action="/child/gift/{{this.id}}?_method=PATCH" method="POST">
+            <tr>
+              <td>{{this.number}}</td>
+              <td>{{this.name}}</td>
+              <td><select class="form-select form-select-sm" name="giftId">
+                <option value="">Brak</option>
+                {{#each ../allGifts}}
+                  <option value="{{this.id}}"
+                  {{#if (equals this.id ../this.giftId)}}selected="selected"
+                          class="active"{{/if}}>{{this.name}}</option>
+                {{/each}}
+              </select>
+              </td>
+              <td>
+                <button class="btn btn-sm btn-secondary">Zapisz</button>
+              </td>
+            </tr>
+          </form>
+        {{/each}}
+      </tbody>
+      </thead>
+    </table>
+  </div>
+</div>
 
-<ul class="list-container-side">
-  {{#each childrenList}}
-    <li>
-      <form action="/child/gift/{{this.id}}?_method=PATCH" method="POST">
-        <label>
-          {{this.name}}
-          <select name="giftId">
-          {{log giftId 'ok'}}
-            <option value="">Brak</option>
-            {{#each ../giftsList}}
-              <option value="{{this.id}}"
-                      {{#if (equals this.id  ../giftId)}}selected="selected"{{/if}}>{{this.name}}</option>
-            {{/each}}
-          </select>
-        </label>
-        <button>Zapisz</button>
-      </form>
-    </li>
-  {{/each}}
-</ul>
-<h2>Dodaj dziecko do listy</h2>
-<form action="/child" method="POST">
-  <label>
-    Imię
-    <input name="name" type="text">
-  </label>
-  <button>Zapisz</button>
-</form>
+<h2 class="p-2">Dodaj Dziecko</h2>
+<div class="input-container m-4 d-flex justify-content-around p-2">
+  <form action="/child" method="POST">
+    <label>
+      Imię: <input name="name" type="text" placeholder="grzeczne dziecko...">
+    </label>
+    <button class="btn btn-sm btn-primary">Dodaj</button>
+  </form>
+</div>

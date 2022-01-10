@@ -1,46 +1,42 @@
-const {ValidationError} = require("../utils/errors");
-const {GiftRecord} = require("../records/gift.record");
-const {ChildRecord} = require("../records/child.record");
-const {Router} = require('express');
+const {ValidationError} = require("../utils/error");
+const {Router} = require("express");
+const {GiftRecord} = require("../record/gift.record");
+const {ChildRecord} = require('../record/child.record');
 
 const childRouter = Router();
 
 childRouter
   .get('/', async (req, res) => {
-    const childrenList = await ChildRecord.listAll();
-    const giftsList = await GiftRecord.listAll();
+    const allChildren = await ChildRecord.getAll();
+    const allGifts = await GiftRecord.getAll();
+
     res.render('child/list', {
-      childrenList,
-      giftsList,
+      allChildren,
+      allGifts,
     });
   })
   .post('/', async (req, res) => {
-    const data = req.body;
-    const newChild = new ChildRecord(data);
+    const newChild = new ChildRecord(req.body);
+    console.log(newChild);
     await newChild.insert();
 
-    res.redirect('/child');
+    res.redirect('/child',);
   })
   .patch('/gift/:childId', async (req, res) => {
-    const child = await ChildRecord.getOne(req.params.childId);
-
-    if (child === null) {
-      throw new ValidationError('Nie znaleziono dziecka o podanym ID.');
-    }
+    const childId = req.params.childId;
+    const child = await ChildRecord.getOne(childId);
     const gift = req.body.giftId === "" ? null : await GiftRecord.getOne(req.body.giftId);
 
     if (gift) {
-      if (gift.stock <= await gift.countGivenGifts()) {
-        throw new ValidationError('Tego prezentu jest za mało.');
+      if (gift.stock <=await gift.countUsedGifts()) {
+        throw new ValidationError("Wykorzystano wszystkie prezenty tego typu z magazyny.");
       }
     }
-    child.giftId = gift === null ? null : gift.id;
+    child.giftId = !gift ? null : gift.id;
     await child.update();
 
-    res.redirect('/child');
-
+    res.redirect('/child',);
   });
-
 module.exports = {
-  childRouter
+  childRouter,
 };

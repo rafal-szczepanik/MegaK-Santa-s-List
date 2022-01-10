@@ -1,6 +1,7 @@
-const handlebarsHelpers = {
+const handlebarHelpers = {
   equals: (a, b) => a === b,
 };
+
 module.exports = {
-  handlebarsHelpers
+  handlebarHelpers
 };

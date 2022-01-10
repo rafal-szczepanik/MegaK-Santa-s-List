@@ -1,23 +1,20 @@
-<h2>Lista prezentów</h2>
-
-<ul class="list-container-side">
-  {{#each giftsList}}
-    <li class="list-item-gift">
-      <label>
-        {{this.name}} ({{this.stock}} szt.)
-      </label>
-    </li>
+<h2 class="p-2">Lista Prezentów</h2>
+<ul class="">
+  {{#each allGifts}}
+    <li class="list-item-hover list-unstyled p-1 w-75 m-auto">{{this.name}} ({{this.stock}} szt.)</li>
   {{/each}}
 </ul>
-<h2>Dodaj prezent do listy</h2>
-<form action="/gift" method="POST">
-  <label>
-    Nazwa
-    <input name="name" type="text">
-  </label>
-  <label>
-    Ilość (szt.)
-    <input name="stock" type="number">
-  </label>
-  <button>Zapisz</button>
-</form>
+<div class="m-4">
+  <h2 class="p-2">Dodaj Prezent</h2>
+  <div class="input-container d-flex justify-content-around p-2">
+    <form action="/gift" method="POST">
+      <label>
+        Nazwa: <input class="" type="text" name="name" placeholder="prezent...">
+      </label>
+      <label>
+        Ilość[szt.]: <input type="number" name="stock" placeholder="ilość...">
+      </label>
+      <button class="btn btn-sm btn-primary">Dodaj</button>
+    </form>
+  </div>
+</div>

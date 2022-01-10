@@ -1,30 +1,28 @@
-const {GiftRecord} = require("../records/gift.record");
-const {Router} = require('express');
+const {Router} = require("express");
+const {GiftRecord} = require("../record/gift.record");
 
 const giftRouter = Router();
 
 giftRouter
   .get('/', async (req, res) => {
+    const allGifts = await GiftRecord.getAll();
 
-    const giftsList = await GiftRecord.listAll();
 
     res.render('gift/list', {
-      giftsList
+      allGifts,
     });
   })
-
   .post('/', async (req, res) => {
     const data = {
       ...req.body,
       stock: Number(req.body.stock)
     };
-    console.log(data);
     const newGift = new GiftRecord(data);
     await newGift.insert();
 
-    res.redirect('/gift');
+    res.redirect('/gift',);
   });
 
 module.exports = {
-  giftRouter
+  giftRouter,
 };
