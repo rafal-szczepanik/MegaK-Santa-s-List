@@ -19,7 +19,9 @@ Project uses:
 * MariaDB database
 * Bootstrap
 ## Images
+localhost:3000/child
 ![aplikacja1](https://user-images.githubusercontent.com/77553286/148827553-9a3ecd33-b2b4-45e2-8deb-1abd0e15e4ed.jpg)
+localhost:3000/gift
 ![aplikacja2](https://user-images.githubusercontent.com/77553286/148827560-d04b9df6-f94c-42a7-819e-356ebfe313a1.jpg)
 
 ## Sources
