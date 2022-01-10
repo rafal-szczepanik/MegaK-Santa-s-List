@@ -14,6 +14,7 @@ Project uses:
 * Express.js
 * Express Handlebars
 * MariaDB database
+* Bootstrap
 
 ## Sources
 This app is inspired by my Javascript mentor Jakób Król
