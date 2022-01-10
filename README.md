@@ -5,6 +5,9 @@ Simple Santa's list in polish language, created with Express.js, MariaDB and Exp
 ## Table of contents
 * [General info](#general-info)
 * [Technologies](#technologies)
+* [Images](#images)
+* [Sources](#sources)
+
 
 ## General info
 
@@ -15,6 +18,9 @@ Project uses:
 * Express Handlebars
 * MariaDB database
 * Bootstrap
+## Images
+![aplikacja1](https://user-images.githubusercontent.com/77553286/148827553-9a3ecd33-b2b4-45e2-8deb-1abd0e15e4ed.jpg)
+![aplikacja2](https://user-images.githubusercontent.com/77553286/148827560-d04b9df6-f94c-42a7-819e-356ebfe313a1.jpg)
 
 ## Sources
 This app is inspired by my Javascript mentor Jakób Król
