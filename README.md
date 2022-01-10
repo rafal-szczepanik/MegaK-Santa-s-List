@@ -25,4 +25,4 @@ localhost:3000/gift
 ![aplikacja2](https://user-images.githubusercontent.com/77553286/148827560-d04b9df6-f94c-42a7-819e-356ebfe313a1.jpg)
 
 ## Sources
-This app is inspired by my Javascript mentor Jakób Król
+This app is inspired by my Javascript mentor Jakub Król
